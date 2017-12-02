@@ -1,6 +1,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
+  	background-image: url("osu2.jpg");
 }
 
 a {
@@ -13,7 +14,7 @@ a:hover {
 }
 
 header {
-  background-color: #000;
+  background-color: #DC4405;
   align-items: center;
   display: flex;
   position: relative;
@@ -23,18 +24,49 @@ header a {
   color: #fff;
 }
 
+.filter-container {
+  min-width: 350px;
+  max-width: 350px;
+  height:400px;
+  margin: 40px 220px auto auto;
+  padding: 20px;
+  border-radius: 3px;
+  background-color: #efefef;
+
+}
+
+.filter-container h2 {
+  margin: 0;
+}
+	
+.filter-input-container {
+  width: 100%;
+  margin: 20px 0;
+  align-items: center;
+  display: flex;
+  align-items: center;
+}
+	
 .site-title {
   font-family: "Roboto Slab", serif;
   font-size: 80px;
   font-weight: 100;
   margin: 0 0 0 20px;
   padding-top: 30px;
+  color:black;
 }
 
 .site-title a:hover {
   text-decoration: none;
+}	
+
+
+
+.hidden {
+  display: none;
 }
 
+/*
 .content {
   display: flex;
 }
@@ -42,10 +74,12 @@ header a {
 .filter-container {
   min-width: 225px;
   max-width: 225px;
-  margin: 10px 10px auto 10px;
+  right:20px;
+ margin: 10px 10px auto 10px;
   padding: 20px;
   border-radius: 3px;
   background-color: #efefef;
+  
 }
 
 .filter-container h2 {
@@ -168,6 +202,7 @@ header a {
  * Modal stuff
  */
 
+ /*
 #modal-backdrop {
   position: fixed;
   top: 0;
@@ -271,3 +306,4 @@ header a {
 #modal-cancel:hover {
   background-color: #eee;
 }
+*/
