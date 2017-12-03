@@ -13,7 +13,7 @@ a:hover {
 }
 
 header {
-  background-color: #000;
+  background-color: #DC4405;
   align-items: center;
   display: flex;
   position: relative;
@@ -33,6 +33,14 @@ header a {
 
 .site-title a:hover {
   text-decoration: none;
+}
+
+.header-image-container img {
+  margin-top: 10px;
+  margin-left: 5px;
+  max-height: 150px;
+  max-width: 250px;
+
 }
 
 .content {
@@ -78,7 +86,7 @@ header a {
 .action-button {
   font-size: 20px;
   color: white;
-  padding: 10px;
+  padding: 1px;
   background-color: #000;
   border: 1px solid #ababab;
   border-radius: 5px;
@@ -92,15 +100,24 @@ header a {
   color: #333;
 }
 
-#filter-update-button {
+#book-car-button {
+  margin-top: 10px;
+  width: 100%;
+  height: 25%;
+  background-color: #000000;
+}
+
+#posts {
+  /*display: flex-grow;*/
+  height: 100%;
   width: 100%;
 }
 
 .post {
   display: inline-block;
   vertical-align: top;
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 45%;
   margin: 10px;
   padding: 10px;
   border: 1px solid #dadada;
@@ -108,21 +125,30 @@ header a {
 }
 
 .post-contents {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: inline-block;
+  /*flex-direction: column;*/
+  /*align-items: center;*/
   height: 100%;
   width: 100%;
 }
 
 .post-image-container img {
-  max-height: 240px;
-  max-width: 300px;
+  max-height: 150px;
+  max-width: 250px;
 }
 
-.post-info-container {
-  width: 100%;
-  margin-top: 20px;
+.post-image-container {
+ /* max-height: 150px;
+  max-width: 250px;*/
+  display:flex;
+
+}
+
+.post-detail-info-container {
+  margin-left: 5px;
+  height:100%;
+  width: 30%;
+  /*margin-top: 5px;*/
 }
 
 .post-price {
