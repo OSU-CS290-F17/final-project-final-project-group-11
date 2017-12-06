@@ -2,6 +2,15 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   	background-image: url("osu2.jpg");
+    background-repeat: no-repeat;
+    background-size: 1600px 1600px;
+	}
+
+.logo
+{
+	margin:10px 0 0 10px;
+	width:140px;
+	height:140px;
 }
 
 a {
@@ -25,11 +34,10 @@ header a {
 }
 
 .filter-container {
-  min-width: 350px;
-  max-width: 350px;
+  min-width: 300px;
+  max-width: 300px;
   height:400px;
   margin: 40px 220px auto auto;
-  padding: 20px;
   border-radius: 3px;
   background-color: #efefef;
 
@@ -41,7 +49,7 @@ header a {
 	
 .filter-input-container {
   width: 100%;
-  margin: 20px 0;
+  margin: 20px 0 0 20px;
   align-items: center;
   display: flex;
   align-items: center;
@@ -65,7 +73,33 @@ header a {
 .hidden {
   display: none;
 }
+.selection{
+	display:flex;
+    height:50px;
+	}
+.passenger
+{
+	width:50%;
+	text-align:center;
+	height:auto;
+    padding:20px;
+}
+.driver
+{
+	width:50%;
+	text-align:center;
+	height:auto;
+	padding:20px;
+}
+.selected
+{
+	background-color:#DC4405;
+	color:white;
+}
 
+.action-button{
+	margin:20px 0 0 20px;
+}
 /*
 .content {
   display: flex;
