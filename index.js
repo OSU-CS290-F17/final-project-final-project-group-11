@@ -9,9 +9,9 @@ document.getElementById("sell-something-button").onclick = function() {openfilte
 
 
 function open() {
-	document.getElementById("book-a-car").style.display = "flex";
-	document.getElementById("model-backdrop").style.display = "flex";
-	document.getElementById("filter-modal").style.display = "flex";
+	//document.getElementById("book-a-car").style.display = "flex";
+	//document.getElementById("modal-backdrop").style.display = "flex";
+	//document.getElementById("filter-modal").style.display = "flex";
 	
 	}
 
@@ -26,8 +26,8 @@ function cancel() {
 	}
 
 function openfilter() {
-	document.getElementById("book-a-car").style.display = "flex";
-	document.getElementById("model-backdrop").style.display = "flex";
+	//document.getElementById("book-a-car").style.display = "flex";
+	document.getElementById("modal-backdrop").style.display = "flex";
 	document.getElementById("filter-modal").style.display = "flex";
 	
 	}	
