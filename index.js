@@ -1,3 +1,19 @@
+
+var allPostElems = [];
+
+window.addEventListener('DOMContentLoaded', function () {
+
+  /*
+   * Remember all of the initial post elements initially displayed in the page.
+   */
+  var postElems = document.getElementsByClassName('post');
+  for (var i = 0; i < postElems.length; i++) {
+    allPostElems.push(postElems[i]);
+  }
+
+
+
+
 document.getElementById("book-car-button").onclick = function() {OpenReserve()};
 document.getElementById("modal-close2").onclick = function() {CloseReserve()};
 document.getElementById("modal-accept2").onclick = function() {AcceptReserve()};
@@ -8,10 +24,12 @@ document.getElementById("modal-close").onclick = function() {Closefilter()};
 document.getElementById("modal-accept").onclick = function() {Acceptfilter()};
 document.getElementById("modal-cancel").onclick = function() {Cancelfilter()};
 
+});
+
 /*--------------------------------------------------------------------------------------*/
-var count;
 
 
+ 
 function handleAddWordButtonClick() {
   var showSomethingModal = document.getElementById('book-a-car');
   var showBlackBlack = document.getElementById('modal-backdrop');  
@@ -72,7 +90,7 @@ function postPassesFilters(postElem, filters) {
 
   if (filters.passenger) {
     var postPassenger = Number(postElem.getAttribute('data-passenger'));
-    var filterPassenger = Number(filters.passenger);
+    var filterPassenger = Number(filters.passenger);	
     if (postPassenger != filterPassenger) {
       return false;
     
@@ -92,7 +110,7 @@ function Acceptfilter() {
 	var filters = {    
     minPrice: document.getElementById('filter-min-price').value,
     maxPrice: document.getElementById('filter-max-price').value,
-    passengers: document.getElementById('filter-max-passengers').value    
+    passenger: document.getElementById('filter-max-passengers').value    
   }
 
   
