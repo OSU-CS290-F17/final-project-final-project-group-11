@@ -1,0 +1,33 @@
+   {{>header}}
+
+   {{#if allPosts}}
+    <main class="content">
+      {{>filter}}
+
+      <section id="posts">
+      
+        {{#each postData}}
+		   {{> postCard}}
+		{{/each}}
+		
+      </section>
+
+    </main>
+	
+    {{>modal}}
+	
+	{{else}}
+
+    <main class="content">
+
+      <section id="posts">          
+		   {{> postCard}}
+      </section>
+
+  </main>
+	
+	
+	{{/if}}
+   
+	
+  

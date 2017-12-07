@@ -1,16 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  	background-image: url("osu2.jpg");
-    background-repeat: no-repeat;
-    background-size: 1600px 1600px;
-	}
-
-.logo
-{
-	margin:10px 0 0 10px;
-	width:140px;
-	height:140px;
 }
 
 a {
@@ -33,83 +23,26 @@ header a {
   color: #fff;
 }
 
-.filter-container {
-  min-width: 350px;
-  max-width: 350px;
-  height:400px;
-  margin: 40px 220px auto auto;
-  border-radius: 3px;
-  background-color: #efefef;
-
-}
-
-.filter-container h2 {
-  margin: 0;
-  
-}
-	
-.filter-input-container {
-  width: 100%;
-  margin: 20px 0 0 20px;
-  align-items: center;
-  display: flex;
-  align-items: center;
-}
-	
 .site-title {
   font-family: "Roboto Slab", serif;
   font-size: 80px;
   font-weight: 100;
   margin: 0 0 0 20px;
   padding-top: 30px;
-  color:black;
 }
 
 .site-title a:hover {
   text-decoration: none;
-}	
-
-
-
-.hidden {
-  display: none;
-}
-.selection{
-	display:flex;
-    height:50px;
-	}
-.passenger
-{
-	width:50%;
-	text-align:center;
-	height:auto;
-    padding:20px;
-}
-.driver
-{
-	width:50%;
-	text-align:center;
-	height:auto;
-	padding:20px;
-}
-.selected
-{
-	background-color:#DC4405;
-	color:white;
 }
 
-.action-button{
-	margin:20px 0 0 20px;
+.header-image-container img {
+  margin-top: 10px;
+  margin-left: 5px;
+  max-height: 150px;
+  max-width: 250px;
+
 }
-.filter-input {
-  font-size: 14px;
-  width: 30%;
-  margin-right: 10px;
-  padding: 3px;
-  border: 1px solid #dadada;
-  border-radius: 3px;
-}
-/*
+
 .content {
   display: flex;
 }
@@ -117,12 +50,10 @@ header a {
 .filter-container {
   min-width: 225px;
   max-width: 225px;
-  right:20px;
- margin: 10px 10px auto 10px;
+  margin: 10px 10px auto 10px;
   padding: 20px;
   border-radius: 3px;
   background-color: #efefef;
-  
 }
 
 .filter-container h2 {
@@ -155,7 +86,7 @@ header a {
 .action-button {
   font-size: 20px;
   color: white;
-  padding: 10px;
+  padding: 1px;
   background-color: #000;
   border: 1px solid #ababab;
   border-radius: 5px;
@@ -163,21 +94,35 @@ header a {
   cursor: pointer;
 }
 
-.action-button:hover {
-  background-color: #f9d2b2;
-  border-color: #333;
-  color: #333;
+#book-car-button {
+  margin-top: 10px;
+  font-size: 20px;
+  color: white;
+  width: 100%;
+  height: 20%;
+  background-color: #000000;
+  font-weight: lighter;
+  cursor: pointer;
 }
 
-#filter-update-button {
+#book-car-button:hover {
+  background-color: #f9d2b2;
+  border-color: #DC4405;
+  color: #DC4405;
+  font-size: 23px;
+}
+
+#posts {
+  /*display: flex-grow;*/
+  height: 100%;
   width: 100%;
 }
 
 .post {
   display: inline-block;
   vertical-align: top;
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 45%;
   margin: 10px;
   padding: 10px;
   border: 1px solid #dadada;
@@ -185,21 +130,38 @@ header a {
 }
 
 .post-contents {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: inline-block;
+  /*flex-direction: column;*/
+  /*align-items: center;*/
   height: 100%;
   width: 100%;
 }
 
 .post-image-container img {
-  max-height: 240px;
-  max-width: 300px;
+  max-height: 150px;
+  max-width: 250px;
 }
 
-.post-info-container {
-  width: 100%;
-  margin-top: 20px;
+.post-image-container {
+ /* max-height: 150px;
+  max-width: 250px;*/
+  display:flex;
+
+}
+
+.post-detail-info-container {
+  margin-left: 5px;
+  height:100%;
+  width: 50%;
+  margin-left: 15px;
+}
+
+.post-detail-info-container p{
+  font-weight: bold;
+}
+
+.post-detail-info-container span{
+  font-weight: normal;
 }
 
 .post-price {
@@ -245,7 +207,6 @@ header a {
  * Modal stuff
  */
 
- /*
 #modal-backdrop {
   position: fixed;
   top: 0;
@@ -256,7 +217,17 @@ header a {
   background-color: rgba(0, 0, 0, 0.85);
 }
 
-#sell-something-modal {
+#filter-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+  overflow: scroll;
+}
+
+#book-a-car {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -349,4 +320,3 @@ header a {
 #modal-cancel:hover {
   background-color: #eee;
 }
-*/

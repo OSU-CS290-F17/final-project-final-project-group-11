@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>OSU Ride</title>
+
+    <!-- This is a 3rd-party stylesheet to make available the font families to be used for this page. -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:100" rel="stylesheet">
+
+    <!-- This is a 3rd-party stylesheet to include Font Awesome icons: http://fontawesome.io/ -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen">
+
+    <link rel="stylesheet" href="style.css">
+	<script src="main.js" charset="utf-8" defer></script>
+  </head>
+  <body>
+
+    <header>
+
+      <div class="header-image-container">
+        <img id="logo" class="logo" src="logo.png" alt="Our logo">
+      </div>
+
+      <h1 class="site-title"><a href="#">OSU Ride</a></h1>
+
+    </header>
+
+    <main class="content">
+      <aside class="filter-container">
+    <div class="selection" >
+	  <div id="driver" class="driver">
+       Driver
+	   </div>
+      <div id="passenger" class="passenger">
+        Passenger
+	  </div>
+    </div>  
+
+<div id="driverDiv" class="driverDiv">	
+    <div class="filter-input-container">
+          <label for="filter-text" class="filter-input-label">Name:</label>
+          <input type="text" name="filter-text" id="filter-text" class="filter-input">
+    </div>
+
+    <div class="filter-input-container">
+          <label for="filter-min-price" class="filter-input-label">Price:</label>
+          <input type="number" name="filter-min-price" id="filter-min-price" class="filter-input"	>
+    </div>	
+	
+	 <div class="filter-input-container">
+          <label for="filter-min-price" class="filter-input-label">Car Image:</label>
+          <input type="text" name="filter-min-car" id="filter-min-car" class="filter-input">
+    </div>	
+	
+	 <div class="filter-input-container">
+          <label for="filter-min-price" class="filter-input-label">License No:</label>
+          <input type="text" name="filter-min-license" id="filter-min-license" class="filter-input">
+    </div>	
+	
+	<div class="filter-input-container">
+          <label for="filter-min-price" class="filter-input-label">Maximum No. of people:</label>
+          <input type="number" name="filter-min-max" id="filter-min-max" class="filter-input">
+    </div>	
+	
+	<button id="filter-update-button" class="action-button">Register</button>
+	
+	</div>
+	
+	<div id="passengerDiv" class="passengerDiv">
+	
+	  <div class="filter-input-container">
+          <label for="filter-text" class="filter-input-label">Name:</label>
+          <input type="text" name="filter-text" id="filter-text" class="filter-input">
+    </div>
+	
+
+	  <div class="filter-input-container">
+          <label for="filter-text" class="filter-input-label">Price:</label>
+          <input type="number" name="filter-text" id="filter-text" class="filter-input">
+    </div>
+
+
+	  <div class="filter-input-container">
+          <label for="filter-text" class="filter-input-label">No. of Passengers:</label>
+          <input type="number" name="filter-text" id="filter-text" class="filter-input">
+    </div>
+
+
+    <div class="filter-input-container">
+          <label for="filter-min-price" class="filter-input-label">Destination:</label>
+          <input type="text" name="filter-min-price" id="filter-min-price" class="filter-input">
+    </div>	
+	
+	<button id="filter-update-button" class="action-button">Search</button>
+	
+	</div>
+<!-- 
+        <div class="filter-input-container">
+          <label for="filter-city">City</label>
+          <select id="filter-city" class="filter-input" name="filter-city">
+            <option selected value="">Any</option>
+            <option>Corvallis</option>
+            <option>Albany</option>
+            <option>Eugene</option>
+            <option>Portland</option>
+            <option>Salem</option>
+            <option>Bend</option>
+          </select>
+        </div>
+ -->
+ 
+        
+
+      </aside>
+    </main>
+
+   
+  </body>
+
+  <script src="index.js" charset="utf-8"></script>
+</html>
