@@ -1,5 +1,7 @@
 var allPostElems = [];
-var count;
+var count ;
+var temp  ;
+
 
 window.addEventListener('DOMContentLoaded', function () {
 
@@ -29,23 +31,30 @@ document.getElementById("modal-cancel").onclick = function() {Cancelfilter()};
 /*--------------------------------------------------------------------------------------*/
 
 
- 
-function handleAddWordButtonClick() {
-  var showSomethingModal = document.getElementById('book-a-car');
-  var showBlackBlack = document.getElementById('modal-backdrop');  
-  showSomethingModal.style.display = "flex";  
-  showBlackBlack.style.display = "flex"; 
-}
+
+
 
 
 function OpenReserve() {
 	
 	var bookButtons = document.getElementsByClassName('car-action-button');
+	//infinity loop
 	for (var i = 0; i < bookButtons.length; i++) {
-	bookButtons[i].addEventListener('click', handleAddWordButtonClick);	
+		
+	bookButtons[i].addEventListener("click", function(){
+
+    var showSomethingModal = document.getElementById('book-a-car');
+	var showBlackBlack = document.getElementById('modal-backdrop');  
+	showSomethingModal.style.display = "flex";  
+	showBlackBlack.style.display = "flex"; 
+	
+
+	});	
+	
+	}	
+	
 	}
-	count = i;
-	}
+	
 /*--------------------------------------------------------------------------------------*/
 function CloseReserve() {
 	document.getElementById("book-a-car").style.display = "none";
@@ -83,7 +92,11 @@ function AcceptReserve() {
 			return false;
 		}
 	
-	
+	/*
+	var postContainer = document.getElementById('posts');  
+    postContainer.removeChild(postContainer.lastChild);
+	postContainer.removeChild(postContainer.lastChild);
+	*/
 	
 	
 	document.getElementById("book-a-car").style.display = "none";
