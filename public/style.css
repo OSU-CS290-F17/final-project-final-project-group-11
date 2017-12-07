@@ -94,18 +94,22 @@ header a {
   cursor: pointer;
 }
 
-.action-button:hover {
+#book-car-button {
+  margin-top: 10px;
+  font-size: 20px;
+  color: white;
+  width: 100%;
+  height: 20%;
+  background-color: #000000;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+#book-car-button:hover {
   background-color: #f9d2b2;
   border-color: #DC4405;
   color: #DC4405;
   font-size: 23px;
-}
-
-#book-car-button {
-  margin-top: 10px;
-  width: 100%;
-  height: 20%;
-  background-color: #000000;
 }
 
 #posts {
