@@ -37,6 +37,11 @@ app.use(express.static('public'));
 		res.status(404).render('404');
 	}
 }); */
+app.get('/main',function(req,res){
+	
+   res.status(200).render('mainPage',{layout:'main1'});
+ 
+});
 
 app.get('/a',function(req,res){
 	var drivers= mongoDBDatabase.collection('drivers');
