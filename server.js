@@ -1,4 +1,3 @@
-
 var path = require('path');
 var express = require('express');
 var app = express();
@@ -37,6 +36,11 @@ app.use(express.static('public'));
 		res.status(404).render('404');
 	}
 }); */
+app.get('/main',function(req,res){
+	
+   res.status(200).render('mainPage',{layout:'main1'});
+ 
+});
 
 app.get('/a',function(req,res){
 	var drivers= mongoDBDatabase.collection('drivers');
@@ -69,4 +73,3 @@ MongoClient.connect(mongoURL, function (err, db) {
   console.log("== Server is listening on port", port);
 });
 });
-
