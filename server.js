@@ -3,7 +3,6 @@ var path = require('path');
 var express = require('express');
 var app = express();
 var port = process.env.PORT || 3000;
-var postData = require('./postData');
 var exphbs = require('express-handlebars');
 var MongoClient = require('mongodb').MongoClient;
 
@@ -14,7 +13,7 @@ var mongoPassword = process.env.MONGO_PASSWORD;
 var mongoDBName = process.env.MONGO_DB;
 
 var mongoURL ='mongodb://' + mongoUser + ':' + mongoPassword + '@' + mongoHost + ':' + mongoPort + '/' + mongoDBName;
-
+console.log(mongoURL);
 var mongoDBDatabase;
 
 app.engine('handlebars', exphbs({defaultLayout:'main'}));
@@ -39,15 +38,15 @@ app.use(express.static('public'));
 	}
 }); */
 
-app.get('/',function(req,res){
+app.get('/a',function(req,res){
 	var drivers= mongoDBDatabase.collection('drivers');
-	var driverCursor= mongoDBDatabase.find({}).toArray();
-	driverCursor.toArray(function (err, Posts) {
+	var driverCursor= drivers.find({});
+	driverCursor.toArray(function (err,posts) {
   if (err) {
     res.status(500).send("Error fetching people from DB.");
   } else {
-	  
-   res.status(200).render('filterPage',Posts);
+	  console.log(posts);
+   res.status(200).render('filterpage',{'posts':posts});
   }
 });
 	
