@@ -1,5 +1,6 @@
 
 var allPostElems = [];
+var count;
 
 window.addEventListener('DOMContentLoaded', function () {
 
@@ -44,32 +45,77 @@ function OpenReserve() {
 	for (var i = 0; i < bookButtons.length; i++) {
 	bookButtons[i].addEventListener('click', handleAddWordButtonClick);	
 	}
-	
+	count = i;
 	}
 /*--------------------------------------------------------------------------------------*/
 function CloseReserve() {
 	document.getElementById("book-a-car").style.display = "none";
 	document.getElementById("modal-backdrop").style.display = "none";
+	
+	document.getElementById("book-passenger-name").value = null;
+	document.getElementById("book-pick-up-location").value = null;
+	document.getElementById("book-destination").value = null;
 	}
 /*--------------------------------------------------------------------------------------*/
 function AcceptReserve() {
+	
+	var passenger = document.getElementById("book-passenger-name").value;
+	var location = document.getElementById("book-pick-up-location").value;
+	var destination = document.getElementById("book-destination").value;
+	
+	submitOK = "true";
+
+	if(passenger==""){
+			alert("Please enter passenger");
+			submitOK = "false";
+	}
+
+	if(location==""){
+			alert("Please enter location");
+			submitOK = "false";
+	}
+
+		
+	if(destination==""){
+			alert("Please enter destination");
+			submitOK = "false";
+	}
+	if (submitOK == "false") {
+			return false;
+		}
+	
+	//allPostElems.pop(postElems[count]);
+	
+	
+	
 	document.getElementById("book-a-car").style.display = "none";
-	document.getElementById("modal-backdrop").style.display = "none";
+	document.getElementById("modal-backdrop").style.display = "none";		
+	document.getElementById("book-passenger-name").value = null;
+	document.getElementById("book-pick-up-location").value = null;
+	document.getElementById("book-destination").value = null;
+		
 	}
 /*--------------------------------------------------------------------------------------*/
 function CancelReserve() {
 	document.getElementById("book-a-car").style.display = "none";
 	document.getElementById("modal-backdrop").style.display = "none";
+	
+	document.getElementById("book-passenger-name").value = null;
+	document.getElementById("book-pick-up-location").value = null;
+	document.getElementById("book-destination").value = null;
 	}
 /*--------------------------------------------------------------------------------------*/
 function Closefilter() {
 	document.getElementById("modal-backdrop").style.display = "none";
 	document.getElementById("filter-modal").style.display = "none";	
+	
+	document.getElementById("filter-min-price").value = null;
+	document.getElementById("filter-max-price").value = null;
+	document.getElementById("filter-max-passengers").value = null;
 	}
 /*--------------------------------------------------------------------------------------*/
 
 function postPassesFilters(postElem, filters) {
-
 
 
   if (filters.minPrice) {
@@ -103,18 +149,14 @@ function postPassesFilters(postElem, filters) {
 /*--------------------------------------------------------------------------------------*/
 function Acceptfilter() {
 	document.getElementById("modal-backdrop").style.display = "none";
-	document.getElementById("filter-modal").style.display = "none";	
-	
-	
+	document.getElementById("filter-modal").style.display = "none";		
 	
 	var filters = {    
     minPrice: document.getElementById('filter-min-price').value,
     maxPrice: document.getElementById('filter-max-price').value,
     passenger: document.getElementById('filter-max-passengers').value    
   }
-
   
-
   /*
    * Remove all "post" elements from the DOM.
    */
@@ -132,24 +174,25 @@ function Acceptfilter() {
       postContainer.appendChild(postElem);
     }
   });
-
-	
-	
-	
-	
-	
-	
-	
+	document.getElementById("filter-min-price").value = null;
+	document.getElementById("filter-max-price").value = null;
+	document.getElementById("filter-max-passengers").value = null;	
 	}
 /*--------------------------------------------------------------------------------------*/
 function Cancelfilter() {
 	document.getElementById("modal-backdrop").style.display = "none";
 	document.getElementById("filter-modal").style.display = "none";
+	document.getElementById("filter-min-price").value = null;
+	document.getElementById("filter-max-price").value = null;
+	document.getElementById("filter-max-passengers").value = null;
 	}
 /*--------------------------------------------------------------------------------------*/
 function Openfilter() {	
 	document.getElementById("modal-backdrop").style.display = "flex";
 	document.getElementById("filter-modal").style.display = "flex";	
+	document.getElementById("filter-min-price").value = null;
+	document.getElementById("filter-max-price").value = null;
+	document.getElementById("filter-max-passengers").value = null;
 	}	
 
 
