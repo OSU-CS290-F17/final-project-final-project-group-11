@@ -1,4 +1,3 @@
-
 var allPostElems = [];
 var count;
 
@@ -15,7 +14,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 
-document.getElementById("book-car-button").onclick = function() {OpenReserve()};
+OpenReserve();
 document.getElementById("modal-close2").onclick = function() {CloseReserve()};
 document.getElementById("modal-accept2").onclick = function() {AcceptReserve()};
 document.getElementById("modal-cancel2").onclick = function() {CancelReserve()};
@@ -84,7 +83,6 @@ function AcceptReserve() {
 			return false;
 		}
 	
-	//allPostElems.pop(postElems[count]);
 	
 	
 	
@@ -193,8 +191,4 @@ function Openfilter() {
 	document.getElementById("filter-min-price").value = null;
 	document.getElementById("filter-max-price").value = null;
 	document.getElementById("filter-max-passengers").value = null;
-	}	
-
-
-
-
+	}
