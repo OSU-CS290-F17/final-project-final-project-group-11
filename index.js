@@ -13,8 +13,10 @@ var count;
 
 
 function handleAddWordButtonClick() {
-  var showSomethingModal = document.getElementById('book-a-car');	
+  var showSomethingModal = document.getElementById('book-a-car');
+  var showBlackBlack = document.getElementById('modal-backdrop');  
   showSomethingModal.style.display = "flex";  
+  showBlackBlack.style.display = "flex"; 
 }
 
 
@@ -29,20 +31,57 @@ function OpenReserve() {
 /*--------------------------------------------------------------------------------------*/
 function CloseReserve() {
 	document.getElementById("book-a-car").style.display = "none";
+	document.getElementById("modal-backdrop").style.display = "none";
 	}
 /*--------------------------------------------------------------------------------------*/
 function AcceptReserve() {
 	document.getElementById("book-a-car").style.display = "none";
+	document.getElementById("modal-backdrop").style.display = "none";
 	}
 /*--------------------------------------------------------------------------------------*/
 function CancelReserve() {
 	document.getElementById("book-a-car").style.display = "none";
+	document.getElementById("modal-backdrop").style.display = "none";
 	}
 /*--------------------------------------------------------------------------------------*/
 function Closefilter() {
 	document.getElementById("modal-backdrop").style.display = "none";
 	document.getElementById("filter-modal").style.display = "none";	
 	}
+/*--------------------------------------------------------------------------------------*/
+
+function postPassesFilters(postElem, filters) {
+
+
+
+  if (filters.minPrice) {
+    var postPrice = Number(postElem.getAttribute('data-price'));
+    var filterMinPrice = Number(filters.minPrice);
+    if (postPrice < filterMinPrice) {
+      return false;
+    }
+  }
+
+  if (filters.maxPrice) {
+    var postPrice = Number(postElem.getAttribute('data-price'));
+    var filterMaxPrice = Number(filters.maxPrice);
+    if (postPrice > filterMaxPrice) {
+      return false;
+    }
+  }
+
+  if (filters.passenger) {
+    var postPassenger = Number(postElem.getAttribute('data-passenger'));
+    var filterPassenger = Number(filters.passenger);
+    if (postPassenger != filterPassenger) {
+      return false;
+    
+    }
+  } 
+  return true;
+
+}
+
 /*--------------------------------------------------------------------------------------*/
 function Acceptfilter() {
 	document.getElementById("modal-backdrop").style.display = "none";
