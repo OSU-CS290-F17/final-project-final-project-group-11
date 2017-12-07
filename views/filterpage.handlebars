@@ -4,26 +4,27 @@
 
       <section id="posts">
 
-      {{#each Posts}}
+      {{#each posts}}
       {{> newPost}}
       {{/each}}
+	  
       </section>
 
     </main>
 
-    <button type="button" id="sell-something-button"><i class="fa fa-filter"></i></button>
+    <button type="button" id="filter-button"><i class="fa fa-filter"></i></button>
 
-    <div id="modal-backdrop" class="hidden"></div>
+    <div id="model-backdrop" class="hidden"></div>
     
-    <div id="filter-modal" class="hidden">
-      <div class="modal-dialog">
+    <div id="filter-model" class="hidden">
+      <div class="model-dialog">
 
-        <div class="modal-header">
+        <div class="model-header">
           <h3>Filter</h3>
-          <button type="button" id="modal-close" class="modal-hide-button">&times;</button>
+          <button type="button" id="model-close" class="model-hide-button">&times;</button>
         </div>
 
-        <div class="modal-body">
+        <div class="model-body">
 
           <div class="filter-input-container">
             <label for="filter-min-price" class="filter-input-label">Price</label>
@@ -38,23 +39,23 @@
 
         </div>
 
-        <div class="modal-footer">
-          <button type="button" id="modal-cancel" class="modal-hide-button action-button">Cancel</button>
-          <button type="button" id="modal-accept" class="action-button">Create Post</button>
+        <div class="model-footer">
+          <button type="button" id="model-cancel" class="model-hide-button action-button">Cancel</button>
+          <button type="button" id="model-accept" class="action-button">Create Post</button>
         </div>
 
       </div>
     </div>
 
     <div id="book-a-car" class="hidden">
-      <div class="modal-dialog">
+      <div class="model-dialog">
 
-        <div class="modal-header">
+        <div class="model-header">
           <h3>Book a ride</h3>
-          <button type="button" id="modal-close" class="modal-hide-button">&times;</button>
+          <button type="button" id="model-close2" class="model-hide-button">&times;</button>
         </div>
 
-        <div class="modal-body">
+        <div class="model-body">
 
           <div class="book-input-container">
             <label for="passenger-name" class="input-name">Price</label>
@@ -72,9 +73,9 @@
           </div>        
         </div>
 
-        <div class="modal-footer">
-          <button type="button" id="modal-cancel" class="modal-hide-button action-button">Cancel</button>
-          <button type="button" id="modal-accept" class="action-button">Confirm</button>
+        <div class="model-footer">
+          <button type="button" id="model-cancel2" class="model-hide-button action-button">Cancel</button>
+          <button type="button" id="model-accept2" class="action-button">Confirm</button>
         </div>
 
       </div>
