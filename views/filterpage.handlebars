@@ -1,0 +1,81 @@
+{{> header}}
+
+<main class="content">
+
+      <section id="posts">
+
+      {{#each Posts}}
+      {{> newPost}}
+      {{/each}}
+      </section>
+
+    </main>
+
+    <button type="button" id="sell-something-button"><i class="fa fa-filter"></i></button>
+
+    <div id="modal-backdrop" class="hidden"></div>
+    
+    <div id="filter-modal" class="hidden">
+      <div class="modal-dialog">
+
+        <div class="modal-header">
+          <h3>Filter</h3>
+          <button type="button" id="modal-close" class="modal-hide-button">&times;</button>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="filter-input-container">
+            <label for="filter-min-price" class="filter-input-label">Price</label>
+            <input type="number" name="filter-min-price" id="filter-min-price" class="filter-input" placeholder="min">
+            <input type="number" name="filter-max-price" id="filter-max-price" class="filter-input" placeholder="max">
+          </div>
+
+          <div class="filter-input-container">
+            <label for="filter-max-passengers" class="filter-input-label">Maximum number of passengers carried</label>
+            <input type="number" name="filter-max-passengers" id="filter-max-passengers" class="filter-input" placeholder="max">
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" id="modal-cancel" class="modal-hide-button action-button">Cancel</button>
+          <button type="button" id="modal-accept" class="action-button">Create Post</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="book-a-car" class="hidden">
+      <div class="modal-dialog">
+
+        <div class="modal-header">
+          <h3>Book a ride</h3>
+          <button type="button" id="modal-close" class="modal-hide-button">&times;</button>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="book-input-container">
+            <label for="passenger-name" class="input-name">Price</label>
+            <input type="text" name="book-passenger-name" id="book-passenger-name" class="book-input" placeholder="Name">
+          </div>
+
+          <div class="book-input-container">
+            <label for="pick-up-location" class="input-location">Pick-up Location</label>
+            <input type="text" name="book-pick-up-location" id="book-pick-up-location" class="book-input" placeholder="Pick-up Location">
+          </div>
+
+          <div class="book-input-container">
+            <label for="destination" class="input-destination">Destination</label>
+            <input type="text" name="book-destination" id="book-destination" class="book-input" placeholder="Destination">
+          </div>        
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" id="modal-cancel" class="modal-hide-button action-button">Cancel</button>
+          <button type="button" id="modal-accept" class="action-button">Confirm</button>
+        </div>
+
+      </div>
+    </div>
