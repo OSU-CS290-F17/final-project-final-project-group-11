@@ -1,6 +1,7 @@
 var allPostElems = [];
 var count ;
 var temp  ;
+var thisRide;
 
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -32,7 +33,7 @@ document.getElementById("model-cancel").onclick = function() {Cancelfilter()};
 
 
 
-
+/*
 
 
 function OpenReserve() {
@@ -54,6 +55,38 @@ function OpenReserve() {
 	}	
 	
 	}
+
+
+
+*/
+function OpenReserve() {
+	
+	var bookButtons = document.getElementsByClassName('car-action-button');
+	//infinity loop
+	for (var i = 0; i < bookButtons.length; i++) {
+		
+	bookButtons[i].addEventListener("click", thisOne);
+	
+	}	
+	
+	}
+
+
+function thisOne(event){
+    var showSomethingmodel = document.getElementById('book-a-car');
+	var showBlackBlack = document.getElementById('model-backdrop');  
+	showSomethingmodel.style.display = "flex";  
+	showBlackBlack.style.display = "flex"; 
+	thisRide = event.currentTarget;
+	var why;
+	why = thisRide.getAttribute("name");
+    console.log(why);
+	var idk = document.getElementById('book-DriverName');
+	idk.value = why;
+	//console.log("getAttribute:", Name_ride);
+
+
+}
 	
 /*--------------------------------------------------------------------------------------*/
 function CloseReserve() {

@@ -23,6 +23,10 @@ header a {
   color: #fff;
 }
 
+.hide_driverName{
+  display:none;
+}
+
 .site-title {
   font-family: "Roboto Slab", serif;
   font-size: 80px;
@@ -320,4 +324,9 @@ header a {
 
 #model-cancel:hover {
   background-color: #eee;
+}
+
+.comfirm_div{
+  height:100%;
+  width: :100%;
 }
