@@ -34,17 +34,17 @@ window.addEventListener('DOMContentLoaded', function () {
   var fp = document.getElementById('filter-Pname').value;
   var fpr = document.getElementById('filter-price').value;
   var fpas = document.getElementById('filter-passengerNo').value;
- 
+ /* 
  console.log(ft);
  console.log(fmp);
  console.log(fmc);
  console.log(fml);
- console.log(fmm);
-   driverButton.addEventListener('click',function(){
+ console.log(fmm); */
+  /*  driverButton.addEventListener('click',function(){
     if(ft == "" || fmp == "" || fmc == "" || fml == "" || fmm == ""){
       alert("Please enter all the information.");
     }
-  });
+  }); */
   
   });
   
