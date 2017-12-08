@@ -36,10 +36,10 @@ app.get('/main',function(req,res){
 });
 app.post('/results',function(req,res){
   var driverName =req.body.driver.name;
-  var driverPrice =req.body.driver.price;
+  var driverPrice =parseInt(req.body.driver.price);
   var driverImg =req.body.driver.img;
   var driverLicense =req.body.driver.license;
-  var driverMax =req.body.driver.max;
+  var driverMax =parseInt(req.body.driver.max);
   var drivers= mongoDBDatabase.collection('drivers');
   var insertObj={name:driverName,price:driverPrice,image:driverImg,licenseNo:driverLicense,maxSeats:driverMax,availability:1};
   drivers.insertOne(insertObj,function(err,result){
@@ -81,6 +81,7 @@ app.post('/confirm',function(req,res){
   console.log(passengerDN);
   //console.log(passengerNo);
   var drivers= mongoDBDatabase.collection('drivers');
+  drivers.update({name:passengerDN},{$set :{availability:0}});
   var insertObj= {name:passengerDN};
   var driverCursor=drivers.find(insertObj);
   driverCursor.toArray(function(err,post){
