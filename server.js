@@ -38,7 +38,12 @@ app.post('/results',function(req,res){
 	var driverImg =req.body.driver.img;
 	var driverLicense =req.body.driver.license;
 	var driverMax =parseInt(req.body.driver.max);
+	    if(driverName==""|| isNaN(driverPrice) || driverImg=="" || driverLicense=="" || isNaN(driverMax))
+	{
 	
+		res.redirect('/main');
+		}
+		else{
 	var drivers= mongoDBDatabase.collection('drivers');
 	var insertObj={name:driverName,price:driverPrice,image:driverImg,licenseNo:driverLicense,maxSeats:driverMax,availability:1};
 	drivers.insertOne(insertObj,function(err,result){
@@ -46,25 +51,39 @@ app.post('/results',function(req,res){
 		console.log("1 post inserted");
 	})
 	res.redirect('/results');
+		}
 });
 
 app.post('/searchResults',function(req,res){
 	var passengerName =req.body.passenger.name;
 	var passengerPrice = parseInt(req.body.passenger.price);
 	var passengerNo = parseInt(req.body.passenger.number);
-	console.log(passengerPrice);
-	console.log(passengerNo);
-	var drivers= mongoDBDatabase.collection('drivers');
+		var drivers= mongoDBDatabase.collection('drivers');
+    if(isNaN(passengerPrice) && isNaN(passengerNo))
+	{
+	
+		res.redirect('/results');
+		}
+		else if(isNaN(passengerPrice)==false && isNaN(passengerNo))
+		{
+			var insertObj= {price:{$lte:passengerPrice},availability:1};
+		}
+		else if(isNaN(passengerPrice) && isNaN(passengerNo)==false )
+		{
+			var insertObj= {maxSeats:{$gte:passengerNo},availability:1};
+		}
+		else{
     var insertObj= {price:{$lte:passengerPrice},maxSeats:{$gte:passengerNo},availability:1};
-	var driverCursor=drivers.find(insertObj);
-	console.log(driverCursor);
+		}
+			var driverCursor=drivers.find(insertObj);
+
 	driverCursor.toArray(function(err,post){
 		if (err) {
       res.status(500).send("Error fetching driver from DB.");
         }
         else{
 		console.log("post found");
-		console.log(post);
+		
 		res.status(200).render('filterpage',{'posts':post});
 	}
 	});
@@ -78,7 +97,7 @@ app.post('/confirm',function(req,res){
   */
   var passengerDN =req.body.passenger.DriverName;
   console.log("Passenger Name",passengerDN);
-  //console.log(passengerNo);
+
   var drivers= mongoDBDatabase.collection('drivers');
   drivers.update({name:passengerDN},{$set:{availability:0}});
   var insertObj= {name:passengerDN};
@@ -89,7 +108,7 @@ app.post('/confirm',function(req,res){
     }
     else{
     console.log("post found");
-    console.log(post);
+
 
     res.status(200).render('confirmPage',{'posts':post});
   }
