@@ -1,16 +1,16 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-    background-image: url("osu2.jpg");
+  	background-image: url("osu2.jpg");
     background-repeat: no-repeat;
     background-size: 1600px 1600px;
-  }
+	}
 
 .logo
 {
-  margin:10px 0 0 10px;
-  width:140px;
-  height:140px;
+	margin:10px 0 0 10px;
+	width:140px;
+	height:140px;
 }
 
 a {
@@ -47,7 +47,7 @@ header a {
   margin: 0;
   
 }
-  
+	
 .filter-input-container {
   width: 100%;
   margin: 20px 0 0 10px;
@@ -55,7 +55,7 @@ header a {
   display: flex;
   align-items: center;
 }
-  
+	
 .site-title {
   font-family: "Roboto Slab", serif;
   font-size: 80px;
@@ -67,7 +67,7 @@ header a {
 
 .site-title a:hover {
   text-decoration: none;
-} 
+}	
 
 
 
@@ -75,31 +75,31 @@ header a {
   display: none;
 }
 .selection{
-  display:flex;
+	display:flex;
     height:50px;
-  }
+	}
 .passenger
 {
-  width:50%;
-  text-align:center;
-  height:auto;
+	width:50%;
+	text-align:center;
+	height:auto;
     padding:20px;
 }
 .driver
 {
-  width:50%;
-  text-align:center;
-  height:auto;
-  padding:20px;
+	width:50%;
+	text-align:center;
+	height:auto;
+	padding:20px;
 }
 .selected
 {
-  background-color:#DC4405;
-  color:white;
+	background-color:#DC4405;
+	color:white;
 }
 
 .action-button{
-  margin:20px 0 0 20px;
+	margin:20px 0 0 20px;
 }
 .filter-input {
   font-size: 14px;

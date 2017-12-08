@@ -34,8 +34,6 @@ document.getElementById("model-cancel").onclick = function() {Cancelfilter()};
 
 
 /*
-
-
 function OpenReserve() {
 	
 	var bookButtons = document.getElementsByClassName('car-action-button');
@@ -43,7 +41,6 @@ function OpenReserve() {
 	for (var i = 0; i < bookButtons.length; i++) {
 		
 	bookButtons[i].addEventListener("click", function(){
-
     var showSomethingmodel = document.getElementById('book-a-car');
 	var showBlackBlack = document.getElementById('model-backdrop');  
 	showSomethingmodel.style.display = "flex";  
@@ -55,9 +52,6 @@ function OpenReserve() {
 	}	
 	
 	}
-
-
-
 */
 function OpenReserve() {
 	

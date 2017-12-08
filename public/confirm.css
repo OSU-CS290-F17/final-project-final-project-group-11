@@ -23,8 +23,14 @@ header a {
   color: #fff;
 }
 
+.confirmPost{
+	width:600px;
+
+}
+.comfirm_div h3{
+
+}
 
 .comfirm_div{
-  height:100%;
-  width: :100%;
+	margin: auto;
 }
