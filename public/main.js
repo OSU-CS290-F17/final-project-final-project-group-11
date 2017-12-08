@@ -25,14 +25,21 @@ window.addEventListener('DOMContentLoaded', function () {
  
   });
   
-/*   driverButton.addEventListener('click',function(){
-	
+  var ft = document.getElementById('filter-text').value;
+  var fmp = document.getElementById('filter-min-price').value;
+  var fmc = document.getElementById('filter-min-car').value;
+  var fml = document.getElementById('filter-min-license').value;
+  var fmm = document.getElementById('filter-min-max').value;
+
+  var fp = document.getElementById('filter-Pname').value;
+  var fpr = document.getElementById('filter-price').value;
+  var fpas = document.getElementById('filter-passengerNo').value;
+ 
+   driverButton.addEventListener('click',function(){
+    if(ft == "" || fmp == "" || fmc == "" || fml == "" || fmm == ""){
+      alert("Please enter all the information.");
+    }
   });
-  
-   passengerButton.addEventListener('click',function(){
-	   var newUrl="http://localhost:3000/results";
-	  document.location.href = newUrl;
-  }); */
   
   });
   
