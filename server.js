@@ -12,7 +12,10 @@ var mongoUser = process.env.MONGO_USER;
 var mongoPassword = process.env.MONGO_PASSWORD;
 var mongoDBName = process.env.MONGO_DB;
 
-var mongoURL ='mongodb://' + mongoUser + ':' + mongoPassword + '@' + mongoHost + ':' + mongoPort + '/' + mongoDBName;
+
+var mongoURL ='mongodb://' + "cs290_sunderr" + ':' + "cs290_sunderr" + '@' + "classmongo.engr.oregonstate.edu" + ':' + "27017" + '/' + "cs290_sunderr";
+
+
 console.log(mongoURL);
 var mongoDBDatabase;
 
@@ -31,7 +34,7 @@ app.get('/main',function(req,res){
    res.status(200).render('mainPage',{layout:'main1'});
  
 });
-app.post('/results',function(req,res,next){
+app.post('/results',function(req,res){
   var driverName =req.body.driver.name;
   var driverPrice =req.body.driver.price;
   var driverImg =req.body.driver.img;
@@ -43,16 +46,65 @@ app.post('/results',function(req,res,next){
     if (err) throw err;
     console.log("1 post inserted");
   })
-  next();
+  res.redirect('/results');
 });
+
+app.post('/searchResults',function(req,res){
+  var passengerName =req.body.passenger.name;
+  var passengerPrice = parseInt(req.body.passenger.price);
+  var passengerNo = parseInt(req.body.passenger.number);
+  console.log(passengerPrice);
+  console.log(passengerNo);
+  var drivers= mongoDBDatabase.collection('drivers');
+    var insertObj= {price:{$lte:passengerPrice},maxSeats:{$gte:passengerNo},availability:1};
+  var driverCursor=drivers.find({price:{$lte:passengerPrice},maxSeats:{$gte:passengerNo},availability:1});
+  console.log(driverCursor);
+  driverCursor.toArray(function(err,post){
+    if (err) {
+      res.status(500).send("Error fetching driver from DB.");
+        }
+        else{
+    console.log("post found");
+    console.log(post);
+    res.status(200).render('filterpage',{'posts':post});
+  }
+  });
+});
+
+app.post('/confirm',function(req,res){
+  /*
+  var passengerName =req.body.passenger.name;
+  var passengerLoc =req.body.passenger.location;
+  var passengerDes =req.body.passenger.destination;
+  */
+  var passengerDN =req.body.passenger.DriverName;
+  console.log(passengerDN);
+  //console.log(passengerNo);
+  var drivers= mongoDBDatabase.collection('drivers');
+  var insertObj= {name:passengerDN};
+  var driverCursor=drivers.find(insertObj);
+  driverCursor.toArray(function(err,post){
+    if (err) {
+      res.status(500).send("Error fetching driver from DB.");
+    }
+    else{
+    console.log("post found");
+    console.log(post);
+
+    res.status(200).render('confirmPage',{'posts':post});
+  }
+  });
+});
+
+
 app.get('/results',function(req,res){
   var drivers= mongoDBDatabase.collection('drivers');
   var driverCursor= drivers.find({});
   driverCursor.toArray(function (err,posts) {
   if (err) {
-    res.status(500).send("Error fetching people from DB.");
+    res.status(500).send("Error fetching driver from DB.");
   } else {
-   res.status(200).render('filterpage',{'posts':posts});
+   res.status(200).render('filterpage',{'posts':posts}, );
   }
 });
   
