@@ -1,0 +1,71 @@
+    {{>header}}
+ 
+ <main class="content">
+      <aside class="filter-container">
+    <div class="selection" >
+    <div id="driver" class="driver">
+       Driver
+     </div>
+      <div id="passenger" class="passenger">
+        Passenger
+    </div>
+    </div>  
+
+<div id="driverDiv" class="driverDiv">  
+<form method="post" action="/results">
+    <div class="filter-input-container">
+          <label for="filter-text" class="filter-input-label" >Name:</label>
+          <input type="text" name="driver[name]" id="filter-text" class="filter-input">
+    </div>
+
+     <div class="filter-input-container">
+          <label for="filter-min-price" class="filter-input-label">Price:</label>
+          <input type="number" name="driver[price]" id="filter-min-price" class="filter-input"  >
+    </div>  
+  
+   <div class="filter-input-container">
+          <label for="filter-min-price" class="filter-input-label">Car Image:</label>
+          <input type="text" name="driver[img]" id="filter-min-car" class="filter-input">
+    </div>  
+  
+   <div class="filter-input-container">
+          <label for="filter-min-price" class="filter-input-label">License No:</label>
+          <input type="text" name="driver[license]" id="filter-min-license" class="filter-input">
+    </div>  
+  
+  <div class="filter-input-container">
+          <label for="filter-min-price" class="filter-input-label">Maximum No. of people:</label>
+          <input type="number" name="driver[max]" id="filter-min-max" class="filter-input">
+    </div>  
+  
+  <button type="submit" id="update-button" class="action-button">Register</button>
+  
+</form>
+  </div>
+  
+  <div id="passengerDiv" class="passengerDiv">
+  <form method="post" action="/searchResults">
+    <div class="filter-input-container">
+          <label for="filter-text" class="filter-input-label">Name:</label>
+          <input type="text" name="passenger[name]" id="filter-Pname" class="filter-input">
+    </div>
+  
+
+    <div class="filter-input-container">
+          <label for="filter-text" class="filter-input-label">Max Price:</label>
+          <input type="number" name="passenger[price]" id="filter-price" class="filter-input">
+    </div>
+
+
+    <div class="filter-input-container">
+          <label for="filter-text" class="filter-input-label">No. of Passengers:</label>
+          <input type="number" name="passenger[number]" id="filter-passengerNo" class="filter-input">
+    </div>
+  
+  <button type="submit" id="search-button" class="action-button">Search</button>
+  </form>
+  </div>
+
+
+      </aside>
+    </main>
