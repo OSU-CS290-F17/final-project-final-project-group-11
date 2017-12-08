@@ -1,5 +1,4 @@
 
-   
 window.addEventListener('DOMContentLoaded', function () {
   
   var driver = document.getElementById('driver');
@@ -8,7 +7,9 @@ window.addEventListener('DOMContentLoaded', function () {
   var driverDiv= document.getElementById('driverDiv');
   var passengerDiv= document.getElementById('passengerDiv');
    passengerDiv.style.display= "none";
-   
+  var driverButton=document.getElementById('update-button');
+  var passengerButton=document.getElementById('search-button');
+  
   passenger.addEventListener('click',function(){
   passenger.classList.add("selected");
   driver.classList.remove("selected");
@@ -23,6 +24,15 @@ window.addEventListener('DOMContentLoaded', function () {
   passengerDiv.style.display= "none";
  
   });
+  
+/*   driverButton.addEventListener('click',function(){
+	
+  });
+  
+   passengerButton.addEventListener('click',function(){
+	   var newUrl="http://localhost:3000/results";
+	  document.location.href = newUrl;
+  }); */
   
   });
   
