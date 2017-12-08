@@ -3,6 +3,7 @@ var express = require('express');
 var app = express();
 var port = process.env.PORT || 3000;
 var exphbs = require('express-handlebars');
+var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 
 var mongoHost = process.env.MONGO_HOST;
@@ -20,41 +21,42 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
 
-/* app.get('/posts/:n',function(req,res){
-	var postReq= req.params.n;
-	
-    console.log(typeof(postNumber),postNumber);
-	
-	if( postReq=='0'  || postReq=='1'  || postReq=='2'  || postReq=='3'  || postReq=='4'	|| postReq=='5'  || postReq=='6' || postReq=='7')
-	{
-		var postNumber = parseInt(postReq);
-		var specificPost= postData[postNumber];
-		console.log(specificPost);
-		res.status(200).render('postPage',specificPost);
-	}
-	else{
-		res.status(404).render('404');
-	}
-}); */
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
+
 app.get('/main',function(req,res){
-	
+  
    res.status(200).render('mainPage',{layout:'main1'});
  
 });
-
-app.get('/a',function(req,res){
-	var drivers= mongoDBDatabase.collection('drivers');
-	var driverCursor= drivers.find({});
-	driverCursor.toArray(function (err,posts) {
+app.post('/results',function(req,res,next){
+  var driverName =req.body.driver.name;
+  var driverPrice =req.body.driver.price;
+  var driverImg =req.body.driver.img;
+  var driverLicense =req.body.driver.license;
+  var driverMax =req.body.driver.max;
+  var drivers= mongoDBDatabase.collection('drivers');
+  var insertObj={name:driverName,price:driverPrice,image:driverImg,licenseNo:driverLicense,maxSeats:driverMax,availability:1};
+  drivers.insertOne(insertObj,function(err,result){
+    if (err) throw err;
+    console.log("1 post inserted");
+  })
+  next();
+});
+app.get('/results',function(req,res){
+  var drivers= mongoDBDatabase.collection('drivers');
+  var driverCursor= drivers.find({});
+  driverCursor.toArray(function (err,posts) {
   if (err) {
     res.status(500).send("Error fetching people from DB.");
   } else {
-	  console.log(posts);
    res.status(200).render('filterpage',{'posts':posts});
   }
 });
-	
-	
+  
+  
 });
 
 app.get('*', function (req, res) {
