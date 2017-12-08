@@ -205,10 +205,10 @@ header a {
 }
 
 /*
- * Modal stuff
+ * model stuff
  */
 
-#modal-backdrop {
+#model-backdrop {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -218,7 +218,7 @@ header a {
   background-color: rgba(0, 0, 0, 0.85);
 }
 
-#filter-modal {
+#filter-model {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -242,27 +242,27 @@ header a {
   display: none;
 }
 
-.modal-dialog {
+.model-dialog {
   width: auto;
   max-width: 600px;
-  min-width: 350px;
+  min-width: 400px;
   min-height: 300px;
   margin: 40px auto;
   background-color: #fff;
   border-radius: 15px;
 }
 
-.modal-header {
+.model-header {
   position: relative;
   padding: 10px 20px;
 }
 
-.modal-header h3 {
+.model-header h3 {
   margin: 0;
   font-size: 28px;
 }
 
-#modal-close {
+#model-close {
   position: absolute;
   right: 10px;
   top: 5px;
@@ -273,7 +273,7 @@ header a {
   cursor: pointer;
 }
 
-.modal-body {
+.model-body {
   padding: 20px;
 }
 
@@ -302,22 +302,22 @@ header a {
   border: 1px solid #ababab;
 }
 
-.modal-footer {
+.model-footer {
   display: flex;
   justify-content: flex-end;
   padding: 10px 10px 20px 10px;
 }
 
-#modal-cancel,
-#modal-accept {
+#model-cancel,
+#model-accept {
   margin-right: 20px;
 }
 
-#modal-cancel {
+#model-cancel {
   color: #333;
   background-color: #fff;
 }
 
-#modal-cancel:hover {
+#model-cancel:hover {
   background-color: #eee;
 }

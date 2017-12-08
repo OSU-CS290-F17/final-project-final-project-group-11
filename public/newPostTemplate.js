@@ -17,6 +17,6 @@ templates['newPost'] = template({"compiler":[7,">= 4.0.0"],"main":function(conta
     + alias4(((helper = (helper = helpers.maxSeats || (depth0 != null ? depth0.maxSeats : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"maxSeats","hash":{},"data":data}) : helper)))
     + "</span></p>\n      <p>License Plate Number: <span class=\"license-plate\">"
     + alias4(((helper = (helper = helpers.licenseNo || (depth0 != null ? depth0.licenseNo : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"licenseNo","hash":{},"data":data}) : helper)))
-    + "</span></p>\n    </div>\n  </div>\n</div\n\n";
+    + "</span></p>\n    </div>\n	\n  </div>\n   <button type=\"button\" id=\"book-car-button\" class=\"car-action-button\">Book</button>\n</div>\n\n";
 },"useData":true});
 })();
